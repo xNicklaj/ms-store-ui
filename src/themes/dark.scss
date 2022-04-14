@@ -1,0 +1,9 @@
+@import './functions';
+
+$dark: (
+  textDark:           color(white),
+  textLight:          color(black),
+  cardBackground:     color(gray150),
+  cardBackgroundHover:color(gray170),
+  cardSubtitle:       color(gray100),
+);

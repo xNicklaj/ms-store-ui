@@ -1,0 +1,85 @@
+@import "../../colors.scss";
+
+$transition-speed: .2s;
+
+.ms-card-custom{
+    border-radius: .5rem;
+    @include theme(background-color, cardBackground);
+    min-width: 9rem;
+    max-width: 16rem;
+    @include theme(color, textDark);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: $ms-depth-shadow-8;
+    transition: box-shadow $transition-speed, transform $transition-speed, background-color $transition-speed;
+    transform: translateY(0);
+
+    .ms-card-container{
+        padding: .5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .ms-card-image{
+            max-width: 7rem;
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .ms-card-image-wrapper{
+                padding: 1rem;
+                margin-top: 2rem;
+                border-radius: 6px;
+                width: calc(100% - 2rem);
+                height: #{width};
+                background-color: rgba(255, 255, 255, .1);
+
+                img{
+                    max-width: 100%;
+                }
+            }
+        }
+
+        .ms-card-info{
+            margin: 1rem 0;
+            margin-top: 2rem;
+            width: calc(100% - 2rem);
+            padding: 1rem;
+
+            .ms-card-title{
+                word-wrap: break-word;
+                margin: 0;
+                font-weight: 500;
+                font-size: 15px;
+            }
+
+            .ms-card-subtitle{
+                margin: 0;
+                @include theme(color, cardSubtitle);
+                font-weight: 400;
+                font-size: 14px;
+            }
+
+            .ms-card-description{
+                margin: .5rem 0;
+                @include theme(color, cardSubtitle);
+                font-weight: 400;
+                font-size: 14px;
+            }
+        }
+
+        .ms-card-footer{
+            width: calc(100% - 2rem);
+            padding: .5rem 1rem;
+            @include theme(color, textDark);
+            text-align: start;
+        }
+    }
+
+}
+
+.ms-card-custom:hover{
+    box-shadow: $ms-depth-shadow-16;
+    transform: translateY(-2px);
+    @include theme(background-color, cardBackgroundHover);
+}
