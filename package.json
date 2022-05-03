@@ -25,7 +25,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npx start-storybook -p 8080",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "build-storybook": "npx build-storybook -o docs"
   },
   "author": "Ravn",
   "license": "ISC",
