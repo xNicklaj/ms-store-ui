@@ -1,4 +1,4 @@
-@import theme(colors);
+@import '../../themes/colors.css';
 
 .ms-card-custom {
     --transition-speed: 200ms;
