@@ -1,16 +1,39 @@
-@import "../../colors.scss";
+@import theme(colors);
 
-$transition-speed: .2s;
+.ms-card-custom {
+    --transition-speed: 200ms;
+    --card-background: var(--color-white);
+    --card-background-hover: var(--color-white);
+    --card-subtitle: var(--color-gray100);
+    --text-color: var(--color-black);
+    --ms-depth-shadow-8: 0 3.2px 7.2px 0 rgb(0 0 0 / 13%), 0 0.6px 1.8px 0 rgb(0 0 0 / 11%);
+    --ms-depth-shadow-16: 0 6.4px 14.4px 0 rgb(0 0 0 / 13%), 0 1.2px 3.6px 0 rgb(0 0 0 / 11%);
+}
+
+@media (prefers-color-scheme: dark){
+    .ms-card-custom:not([data-theme='light']){
+        --card-background: var(--color-gray150);
+        --card-background-hover: var(--color-gray170);
+        --text-color: var(--color-white);
+    }
+}
+
+.ms-card-custom[data-theme='dark']{
+    --card-background: var(--color-gray150);
+    --card-background-hover: var(--color-gray170);
+    --text-color: var(--color-white);
+}
 
 .ms-card-custom{
     border-radius: .5rem;
-    @include theme(background-color, cardBackground);
+    background-color: var(--card-background);
+
     min-width: 9rem;
     max-width: 16rem;
-    @include theme(color, textDark);
+    color: var(--text-color);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    box-shadow: $ms-depth-shadow-8;
-    transition: box-shadow $transition-speed, transform $transition-speed, background-color $transition-speed;
+    box-shadow: var(--ms-depth-shadow-8);
+    transition: box-shadow var(--transition-speed), transform var(--transition-speed), background-color var(--transition-speed);
     transform: translateY(0);
 
     .ms-card-container{
@@ -31,7 +54,7 @@ $transition-speed: .2s;
                 margin-top: 2rem;
                 border-radius: 6px;
                 width: calc(100% - 2rem);
-                height: #{width};
+                height: calc(100% - 2rem);
                 background-color: rgba(255, 255, 255, .1);
 
                 img{
@@ -55,14 +78,15 @@ $transition-speed: .2s;
 
             .ms-card-subtitle{
                 margin: 0;
-                @include theme(color, cardSubtitle);
+                color: var(--card-subtitle);
+
                 font-weight: 400;
                 font-size: 14px;
             }
 
             .ms-card-description{
                 margin: .5rem 0;
-                @include theme(color, cardSubtitle);
+                color: var(--card-subtitle);
                 font-weight: 400;
                 font-size: 14px;
             }
@@ -71,7 +95,7 @@ $transition-speed: .2s;
         .ms-card-footer{
             width: calc(100% - 2rem);
             padding: .5rem 1rem;
-            @include theme(color, textDark);
+            color: var(--text-color);
             text-align: start;
         }
     }
@@ -79,7 +103,7 @@ $transition-speed: .2s;
 }
 
 .ms-card-custom:hover{
-    box-shadow: $ms-depth-shadow-16;
+    box-shadow: var(--ms-depth-shadow-16);
     transform: translateY(-2px);
-    @include theme(background-color, cardBackgroundHover);
+    background-color: var(--card-background-hover);
 }

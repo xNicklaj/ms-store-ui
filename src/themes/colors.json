@@ -1,0 +1,15 @@
+{
+  "custom-media": {},
+  "custom-properties": {
+    "--color-black": "#000000",
+    "--color-white": "#ffffff",
+    "--color-gray190": "#201f1e",
+    "--color-gray180": "#252423",
+    "--color-gray170": "#292827",
+    "--color-gray160": "#323130",
+    "--color-gray150": "#3b3a39",
+    "--color-gray100": "#979593",
+    "--color-gray10": "#faf9f8"
+  },
+  "custom-selectors": {}
+}
