@@ -13,15 +13,12 @@ export function StoreCardStory(){
     const title = text('Title', 'Title');
     const subtitle = text('Subtitle', 'Subtitle');
     const description = text('Description', 'Content');
-    const theme = options('Theme', { dark: 'dark', light: 'light'}, 'light', {display: 'select'});
-    useEffect(() => {
-        document.querySelector('html').classList.remove('dark');
-        document.querySelector('html').classList.remove('light');
-        document.querySelector('html').classList.add(theme);
-    })
+    const theme = options('Theme', { auto: 'auto', dark: 'dark', light: 'light'}, 'auto', {display: 'select'});
+    document.documentElement.dataset.theme = theme;
+    console.log(document.documentElement.dataset)
     return (
             <div style={{maxWidth: '100%', height: '20rem'}}>
-                <StoreCard>
+                <StoreCard theme={theme}>
                     <StoreCardContainer>
                         <StoreCardImage src='https://vignette.wikia.nocookie.net/secretlifeofpets/images/5/59/Spotify_logo_without_text.svg.png/revision/latest/scale-to-width-down/480?cb=20170813213127' />
                         <StoreCardTitle>{title}</StoreCardTitle>

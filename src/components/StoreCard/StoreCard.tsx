@@ -1,7 +1,6 @@
 import React, { FC } from 'react';
-import PropTypes from 'prop-types';
 
-import '!style-loader!css-loader!sass-loader!./StoreCard.scss';
+import './StoreCard.css';
 
 export type StoreCardTitleProps = JSX.IntrinsicElements["h3"];
 export type StoreCardSubitleProps = JSX.IntrinsicElements["h4"];
@@ -83,8 +82,8 @@ export const StoreCardContainer: FC<StoreCardContainerProps> = ({className, chil
     )
 }
 
-const StoreCard: FC<StoreCardProps> = ({className, ...props}) => {
-    return (<div {...props} className={`ms-card-custom ${className}`}>
+const StoreCard: FC<StoreCardProps> = ({className, theme, ...props}) => {
+    return (<div {...props} className={`ms-card-custom ${className}`} data-theme={theme} style={{}}>
         {props.children}
         </div>);
 }
